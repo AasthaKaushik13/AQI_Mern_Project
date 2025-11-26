@@ -1,7 +1,7 @@
 # AQI MERN App  
 ### A Complete Air Quality Index Tracking Application (Interview Project)
 
-This is a full-stack **MERN** (MongoDB, Express, React, Node.js) project that allows users to search real-time **Air Quality Index (AQI)** of any city using the **AQICN API**, visualize data beautifully, and store results using a smart caching mechanism.
+This is a full-stack **MERN** (MongoDB, Express, React, Node.js) project that allows users to search real-time **Air Quality Index (AQI)** of any city using the **AQICN API**, visualize data beautifully, and store results using a smart caching mechanism.The webiste also has a light/dark theme toggle for seamless user experience.
 
 This application was built as an **interview project** to demonstrate backend API development, frontend UI/UX, caching strategies, and clean MERN architecture.
 
@@ -75,3 +75,8 @@ npm start
 cd frontend
 npm install
 npm start
+
+Below are some pictures for your reference:
+<img width="1887" height="866" alt="Screenshot 2025-11-26 124250" src="https://github.com/user-attachments/assets/88c57a45-fa4e-4894-87f0-3427a8a248ca" />
+
+<img width="1893" height="853" alt="Screenshot 2025-11-26 124426" src="https://github.com/user-attachments/assets/c8d5f57e-2feb-4f57-8929-6673243a9dd9" />
