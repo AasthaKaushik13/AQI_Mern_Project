@@ -64,14 +64,12 @@ Base URL:
 
 ## ⚙️ Backend Setup
 
-```bash
 cd backend
 npm install
 npm start
 
 ## Frontend Setup
 
-```bash
 cd frontend
 npm install
 npm start
