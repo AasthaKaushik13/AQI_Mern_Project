@@ -1,0 +1,35 @@
+
+.card { border-radius: 16px; padding: 18px; color: var(--text); box-shadow: 0 8px 30px rgba(2,6,23,0.35); }
+.glass-card { background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.04); }
+
+.card-header { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.city { margin:0; font-size:20px; }
+.meta.small { font-size:12px; opacity:0.85; margin-top:6px; }
+
+.aqi-badge { text-align:center; min-width:84px; }
+.aqi-val { font-size:28px; font-weight:800; }
+.aqi-label { font-size:12px; opacity:0.9; }
+
+.card-body { display:flex; gap:18px; margin-top:12px; }
+.left { width:320px; display:flex; flex-direction:column; gap:12px; align-items:center; }
+.right { flex:1; display:flex; flex-direction:column; gap:12px; }
+
+.ring-wrap { position:relative; display:inline-block; }
+
+/* SVG ring sizing */
+.aqi-ring { display:block; width:140px; height:140px; }
+
+/* IAQI list rows */
+.iaqi-list { width:100%; padding:6px 0; }
+.iaqi-row { display:flex; justify-content:space-between; padding:6px 10px; background:var(--card-bg-2); border-radius:8px; margin-bottom:6px; }
+.iaqi-key { font-weight:600; opacity:0.95; }
+.iaqi-val { font-weight:700; }
+
+.panel.glass { padding:12px; border-radius:12px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border: 1px solid rgba(255,255,255,0.04); }
+html[data-theme="light"] .panel.glass { background: var(--card-bg); border:1px solid rgba(15,23,42,0.06); }
+
+.actions { display:flex; gap:8px; justify-content:space-between; align-items:center; }
+.btn { padding:8px 10px; border-radius:10px; border:none; cursor:pointer; }
+.btn.ghost { background:transparent; color:var(--text); border:1px solid rgba(255,255,255,0.06); }
+html[data-theme="light"] .btn.ghost { border:1px solid rgba(15,23,42,0.06); color:var(--text); }
+.btn.link { background:transparent; color:var(--accent); text-decoration:none; border:1px solid rgba(255,255,255,0.03); }

@@ -1,0 +1,220 @@
+:root {
+  --bg1: linear-gradient(135deg, #0f172a 0%, #071233 100%);
+  --bg2: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+  --card-bg: rgba(255,255,255,0.06);
+  --card-bg-2: rgba(255,255,255,0.03);
+  --text: #e6eef8;
+  --muted: rgba(255,255,255,0.75);
+  --ring-track: rgba(255,255,255,0.06);
+  --accent: #60a5fa;
+  --page-pad: 18px;
+}
+
+/* light theme overrides (when html[data-theme="light"]) */
+html[data-theme="light"] {
+  --card-bg: rgba(255,255,255,0.9);
+  --card-bg-2: rgba(2,6,23,0.04);
+  --text: #0f172a;
+  --muted: rgba(15,23,42,0.65);
+  --ring-track: rgba(15,23,42,0.06);
+  --accent: #06b6d4;
+}
+
+/* dark default assumed */
+html[data-theme="dark"] {
+  /* dark uses :root defaults, but allow explicitness */
+  --card-bg: rgba(255,255,255,0.06);
+  --card-bg-2: rgba(255,255,255,0.03);
+  --text: #e6eef8;
+  --muted: rgba(255,255,255,0.75);
+  --ring-track: rgba(255,255,255,0.06);
+  --accent: #60a5fa;
+}
+
+/* page background controlled by theme */
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg1);
+  transition: background 0.3s ease, color 0.25s ease;
+}
+
+/* switch background for light */
+html[data-theme="light"] body {
+  background: var(--bg2);
+  color: var(--text);
+}
+
+/* layout */
+.page-wrap { max-width:1100px; margin:28px auto; padding:var(--page-pad); }
+.hero { text-align:left; margin-bottom:18px; }
+.hero-title { margin:0; font-size:34px; letter-spacing:-0.6px; }
+.hero-sub { margin:6px 0 12px; opacity:0.9; color:var(--muted); }
+
+.controls-row { display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+.searchbar-component { display:flex; flex:1; gap:8px; position:relative; }
+.searchbar-component input {
+  flex:1; padding:12px 14px; border-radius:12px;
+  border:1px solid rgba(255,255,255,0.06);
+  background: transparent; color: var(--text);
+}
+html[data-theme="light"] .searchbar-component input {
+  border:1px solid rgba(15,23,42,0.08); background: white; color: var(--text);
+}
+
+.searchbar-component .btn.primary {
+  padding:12px 16px; background:linear-gradient(90deg,#06b6d4,#6366f1);
+  color:white; border-radius:10px; border:none;
+}
+
+.suggests { position:absolute; left:0; top:48px; background:var(--card-bg); padding:8px; border-radius:8px; display:flex; gap:8px; flex-wrap:wrap; }
+.suggest { border-radius:8px; background:var(--card-bg-2); padding:6px 10px; border:none; cursor:pointer; color:var(--text); }
+
+.favorites { margin-top:12px; display:flex; align-items:center; gap:12px; }
+.fav-list { display:flex; gap:8px; flex-wrap:wrap; }
+.fav-item { background:var(--card-bg-2); padding:6px 8px; border-radius:8px; border:none; color:var(--text); }
+
+.main { margin-top:8px; }
+.content-grid { display:grid; grid-template-columns: 1fr 360px; gap:18px; align-items:start; }
+
+.skeleton-card { height:280px; border-radius:12px; background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); }
+.shimmer { position:relative; overflow:hidden; }
+.shimmer::after { content:''; position:absolute; top:0; left:-150%; height:100%; width:150%; background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.08), rgba(255,255,255,0.02)); transform:skewX(-20deg); animation: shimmer 1.4s infinite; }
+@keyframes shimmer { to { left:150%; } }
+
+.panel { padding:12px; border-radius:12px; color:var(--text); background:var(--card-bg); border:1px solid rgba(255,255,255,0.04); }
+html[data-theme="light"] .panel { border:1px solid rgba(15,23,42,0.06); }
+.chip-list { display:flex; gap:8px; flex-wrap:wrap; }
+.chip { background:var(--card-bg-2); color:var(--text); padding:6px 8px; border-radius:8px; border:none; cursor:pointer; }
+
+.notice.error { background: #ffefef; color:#86181d; padding:10px; border-radius:10px; }
+
+.footer { margin-top:24px; text-align:center; color:var(--muted); }
+
+/* buttons */
+.btn { padding:8px 10px; border-radius:10px; border:none; cursor:pointer; }
+.btn.ghost { background:transparent; color:var(--text); border:1px solid rgba(255,255,255,0.06); }
+html[data-theme="light"] .btn.ghost { border:1px solid rgba(15,23,42,0.06); color:var(--text); }
+.btn.link { background:transparent; color:var(--accent); text-decoration:none; border:1px solid rgba(255,255,255,0.03); }
+
+/* small helpers */
+.small { font-size:12px; color:var(--muted); }
+.muted { opacity:0.85; color:var(--muted); }
+
+/* responsive */
+@media (max-width: 920px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .right-col { order: 2; }
+}
+
+
+/* Add space between left and right column */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 32px; /* ensures columns never overlap */
+}
+
+/* Right column panels spacing */
+.right-col > .panel {
+  margin-bottom: 20px;
+}
+
+/* Ensure AQI card does not overlap panels on small screens */
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .right-col {
+    margin-top: 20px; /* push recent searches below card */
+  }
+}
+
+/* Add spacing above recent searches panel */
+.right-col .panel:nth-child(2) {
+  margin-top: 16px;
+}
+
+
+.care-tips-card {
+  margin-top: 1rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: 20px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  animation: fadeIn 0.4s ease;
+}
+
+.care-title {
+  margin: 0 0 0.6rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.care-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.care-list li {
+  margin-bottom: 4px;
+}
+
+.risk-meter-card {
+  margin-top: 1rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 18px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+}
+
+.risk-meter-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.risk-meter-track {
+  width: 100%;
+  height: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  overflow: hidden;
+  position: relative;
+}
+
+.risk-meter-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 12px;
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+/* Pulse glow effect */
+@keyframes pulse {
+  0%   { filter: brightness(0.9); }
+  50%  { filter: brightness(1.2); }
+  100% { filter: brightness(0.9); }
+}
+
+/* Shake animation for hazardous AQI */
+.shake {
+  animation: shakeAnim 0.3s infinite;
+}
+
+@keyframes shakeAnim {
+  0% { transform: translateX(0px); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0px); }
+}

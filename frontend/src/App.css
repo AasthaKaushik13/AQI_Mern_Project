@@ -1,0 +1,35 @@
+:root {
+  --bg: #f5f7fa;
+  --text: #111;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --border: #ddd;
+  --accent: #4a90e2;
+}
+
+.dark {
+  --bg: #0f172a;
+  --text: #f8fafc;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --border: #334155;
+  --accent: #60a5fa;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.25s ease;
+}
+
+
+.recent-searches {
+  margin-top: 12px;
+  margin-bottom: 24px; /* prevents overlap */
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.result-wrapper {
+  margin-top: 30px; /* space before AQI Card appears */
+}

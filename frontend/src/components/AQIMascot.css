@@ -1,0 +1,26 @@
+.mascot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  animation: float 4s ease-in-out infinite;
+  z-index: 9999;
+}
+
+.mascot-img {
+  width: 140px;
+  user-select: none;
+}
+
+.mascot-text {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.9;
+  color: var(--text);
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
