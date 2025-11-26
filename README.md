@@ -1,228 +1,234 @@
-AQI MERN App
-A Complete Air Quality Index Tracking Application (Interview Project)
+🌍 AQI MERN App
+### **A Complete Air Quality Index Tracking Application (Interview Project)**
 
-A full-stack MERN (MongoDB, Express, React, Node.js) application to search real-time Air Quality Index (AQI) for any city using the AQICN API.
+A full-stack **MERN** (MongoDB, Express, React, Node.js) project to search real-time **Air Quality Index (AQI)** for any city using the **AQICN API**.
 
-The project demonstrates:
+This project demonstrates:
 
-Full backend API development
+* Full backend API development
+* Smart caching strategies
+* Modern React UI
+* Advanced animations & visualizations
+* Real-world AQI health interpretation
+* Clean MERN architecture
 
-Caching strategies
+Built as part of an **interview assignment**, showcasing production-quality work.
 
-Modern React UI
+---
 
-Visualizations
+# 🚀 Features
 
-Real-world AQI health interpretation
+## 🔹 **Backend (Node.js + Express + MongoDB)**
 
-Clean MERN architecture
+* Fetches live AQI using the official **AQICN API**
+* Smart caching with **MongoDB TTL index**
+* Automatic cache invalidation
+* Clean controller–service structure
+* Uses `.env` for secure API tokens
+* Full error handling & input validation
 
-This project was built as part of an interview assignment and showcases production-quality work.
+---
 
-Features
-Backend (Node.js + Express + MongoDB)
+# 🎨 **Frontend (React — Modern UI/UX)**
 
-Fetches real-time AQI data using the official AQICN API
+## **1️⃣ Search Any City (Live AQI)**
 
-Smart caching using MongoDB TTL index
+* Clean animated search bar
+* Auto-saved **recent searches**
+* Works with Enter key & click
+* Fast, crisp UI feedback
 
-Automatic cache invalidation
+---
 
-Clean controller–service structure
+## **2️⃣ Dynamic AQI Category Badge**
 
-Supports .env for secure API tokens
+Automatically classifies the AQI and applies color coding:
 
-Full error handling and validation
+| AQI Value | Category                        |
+| --------- | ------------------------------- |
+| 0–50      | 🟢 Good                         |
+| 51–100    | 🟡 Moderate                     |
+| 101–150   | 🟠 Unhealthy (Sensitive Groups) |
+| 151–200   | 🔴 Unhealthy                    |
+| 201–300   | 🟣 Very Unhealthy               |
+| 301+      | 🟤 Hazardous                    |
 
-Frontend (React — Modern UI/UX)
-1. Search Any City (Live AQI)
+---
 
-Clean search bar with instant UI feedback
+## **3️⃣ 🆕 Animated Risk Level Bar (Premium UI Component)**
 
-Auto-saves recent searches
+A beautiful **animated meter bar** that responds to AQI:
 
-Works with both Enter key & button click
+✨ Smooth width animation
+🌈 Gradient color fill
+💡 Glow effect
+❤️ Pulse animation
+⚠️ Shake effect when AQI is hazardous
+📱 Fully responsive
 
- 2. Dynamic AQI Category Badge
+Adds a professional health-dashboard feel.
 
-AQI is automatically categorized and color-coded:
+---
 
-AQI Value	Category
-0–50	Good
-51–100	Moderate
-101–150	Unhealthy (Sensitive Groups)
-151–200	Unhealthy
-201–300	Very Unhealthy
-301+	Hazardous
-3. NEW: Animated Risk Level Bar (Color-coded + Effects)
+## **4️⃣ 🆕 Interactive AQI Mascot System**
 
-A premium animated bar that changes based on AQI:
+A dynamic character that changes based on AQI:
 
-Gradient color fill
+| AQI Range | Mascot                            |
+| --------- | --------------------------------- |
+| 0–100     | 😊 Healthy / Happy character      |
+| 101–200   | 😷 Mild coughing / Mask character |
+| 200+      | 🤒 Severe / Danger character      |
 
-Soft glow effect
+Makes the interface fun, expressive, and instantly readable.
 
-Pulse animation
+---
 
-Shaking effect when AQI is hazardous
+## **5️⃣ 🆕 AQI Health Care Tips**
 
-Smooth width transition
+Smart suggestions based on AQI:
 
-Fully responsive
+* **Good (0–50):** “Enjoy freely, everything looks perfect!”
+* **Moderate:** “People with asthma should stay cautious.”
+* **Unhealthy:** “Wear a mask, avoid outdoor exercise.”
+* **Hazardous:** “Stay indoors, use air purifiers.”
 
-This gives a professional health-dashboard feel.
- 4. NEW: Interactive AQI Mascot System
+Improves real-world usability.
 
-Automatically shows a character based on AQI:
+---
 
-AQI	Mascot
-0–100	😊 Healthy character
-101–200	😷 Mask / mild coughing
-200+	🤒 Severe / danger character
+## **6️⃣ AQI Trend Chart (Chart.js)**
 
-Adds personality and visual clarity for users.
+Includes:
 
-5. NEW: AQI Health Care Tips Section
+* Past AQI values
+* Color-coded bars
+* Smooth transitions
+* Auto-updates when city changes
 
-Under the favorites bar, context-aware suggestions are shown:
+Provides pollution trend visualization.
 
-If AQI is Good → “Free to go outside, enjoy!”
+---
 
-If Moderate → “People with asthma should stay cautious.”
+## **7️⃣ Favorites System**
 
-If Unhealthy → “Wear a mask, keep windows closed.”
+* Save cities with one click
+* Stored in **localStorage**
+* Persistent across reloads
+* Tap to instantly reload AQI
 
-If Hazardous → “Avoid going outdoors, use air purifiers.”
+---
 
-Highly useful for real-world decision-making.
+## **8️⃣ Recent Searches**
 
-6. AQI Trend Chart (Chart.js)
+Automatically stores and displays your latest queries.
 
-Displays:
+---
 
-Past AQI values
+## **9️⃣ Light/Dark Theme Toggle**
 
-Color-coded bars
+* Global theme change
+* Stored in localStorage
+* Smooth animated transitions
+* Applies to the entire UI
 
-Smooth transitions
+---
 
-Live updates when the city changes
+## **🔟 Framer Motion Animations Everywhere**
 
-Gives users a visual idea of pollution variations.
+Subtle, premium micro-interactions applied to:
 
-7. Favorites System
+* Cards
+* Text
+* Risk meter
+* Mascot
+* Charts
+* Search bar
 
-Users can save cities and switch quickly.
+Makes the app feel modern and app-like.
 
-Stored in localStorage
+---
 
-Persistent across reloads
-
-Click-to-load feature
-8. Recent Searches
-
-Auto-stored whenever the user searches something.
- 
- 9. Light/Dark Theme Toggle
-
-Stored in localStorage
-
-Smooth animated transitions
-
-Works globally across the UI
-
-10. Framer Motion Animations Everywhere
-
-Adds micro-interactions:
-
-Cards
-
-Mascot
-
-Risk Meter
-
-Text transitions
-
-Opacity fade-in
-
-Slide animations
-
-App feels premium and app-like.
-
- 11. AQI Interpretation Engine
+## **1️⃣1️⃣ AQI Interpretation Engine**
 
 Automatically calculates:
 
-AQI category
+* AQI category
+* Risk level
+* Bar color
+* Mascot state
+* Health tips
+* Danger alerts
 
-Risk level
-
-Bar color
-
-Mascot state
-
-Care suggestions
-
-Danger effects
-
-This is the core intelligence that powers the UI.
-
-General Features
-
-Clean MERN folder architecture
-
-API token is not exposed to frontend
-
-Environment-based configuration
-
-Mobile responsive
-
-Professional-grade UI
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| **Frontend** | React, Chart.js, Framer Motion, Axios |
-| **Backend** | Node.js, Express.js |
-| **Database** | MongoDB (with TTL caching) |
-| **API Provider** | AQICN (World’s Air Quality Index Platform) |
+This intelligence powers the whole UI.
 
 ---
 
-## API Endpoints
+# 🧱 General Features
 
-Base URL:  
+* Clean MERN folder structure
+* API token hidden from frontend
+* Environment-based config
+* Fully mobile responsive
+* Professional-grade UI design
+
+---
+
+# 🛠 Tech Stack
+
+| Layer            | Technology                            |
+| ---------------- | ------------------------------------- |
+| **Frontend**     | React, Chart.js, Framer Motion, Axios |
+| **Backend**      | Node.js, Express.js                   |
+| **Database**     | MongoDB (with TTL caching)            |
+| **API Provider** | AQICN (World Air Quality Index)       |
+
+---
+
+# 📡 API Endpoint
+
+Base URL:
 `http://localhost:4000`
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| **GET** | `/api/air?city=<city-name>` | Fetch AQI by city and store cached response |
+| Method  | Endpoint                    | Description                         |
+| ------- | --------------------------- | ----------------------------------- |
+| **GET** | `/api/air?city=<city-name>` | Fetch AQI and store cached response |
 
 ---
 
-## Run Locally
+# 🏃 Run Locally
 
-### 📌 Prerequisites
-- Node.js 16+
-- MongoDB Installed (local or cloud)
-- AQICN API Token (you can register at https://aqicn.org)
+## 📌 Prerequisites
+
+* Node.js 16+
+* MongoDB (local or cloud)
+* AQICN API Token (get it here → [https://aqicn.org](https://aqicn.org))
 
 ---
 
-## ⚙️ Backend Setup
+# ⚙️ Backend Setup
 
+```sh
 cd backend
 npm install
 npm start
+```
 
-## Frontend Setup
+---
 
+# 💻 Frontend Setup
+
+```sh
 cd frontend
 npm install
 npm start
+```
 
-Below are some pictures for your reference:
+---
+
+# 📸 Screenshots
+
 <img width="1887" height="866" alt="Screenshot 2025-11-26 124250" src="https://github.com/user-attachments/assets/88c57a45-fa4e-4894-87f0-3427a8a248ca" />
 
 <img width="1893" height="853" alt="Screenshot 2025-11-26 124426" src="https://github.com/user-attachments/assets/c8d5f57e-2feb-4f57-8929-6673243a9dd9" />
+
